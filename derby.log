@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Mon Sep 24 15:12:17 CEST 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0166-0bb5-834e-00001564dcf0 
-on database directory C:\Users\Dávid\eclipse-workspace\mymedia\UsersDB with class loader WebappClassLoader
+Mon Sep 24 16:27:48 CEST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0166-0bfa-a819-0000150e7650 
+on database directory C:\Users\Dávid\Desktop\Dávid\szakdoga\mymedia\UsersDB with class loader WebappClassLoader
   context: 
   delegate: false
   repositories:
@@ -11,7 +11,7 @@ ClassRealm[plugin>org.apache.tomcat.maven:tomcat7-maven-plugin:2.2, parent: sun.
 Loaded from file:/C:/Users/Dávid/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_181-b13
-user.dir=C:\Users\Dávid\eclipse-workspace\mymedia
+user.dir=C:\Users\Dávid\Desktop\Dávid\szakdoga\mymedia
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
