@@ -7,7 +7,7 @@
 	         color:#f3ff99; 
  	    	 font-weight: bold;">
 <h1><center>Sing in</center></h1>
- <form action="login.do" method="post">
+ <form action="login" method="post">
  <table
  		cellpadding = "8" style="border: 1px solid black;
  	    border-radius: 16px; 
@@ -34,6 +34,10 @@
 	 
 	 <tr>
 	 	<td><center><input type="submit" value = "login"></center></td>
+	 </tr>
+	 
+	 <tr>
+	 	<td><center><a href ="registration" >Registration</center></td>
 	 </tr>
  	
  </table>

@@ -35,6 +35,40 @@ public class User implements Serializable{
     
     @Column(name = "PASSWORD", nullable = false, updatable = true)
     private String password;
+    
+    @Column(name = "EMAIL", nullable = false, updatable = false)
+    private String email;
+    
+    @Column(name = "FULLNAME", nullable = false, updatable = true)
+    private String fullname;
+    
+    
+
+	public User(String username, String password, String email, String fullname) {
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.fullname = fullname;
+	}
+	public User() {
+		
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFullname() {
+		return fullname;
+	}
+
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
 
 	public Long getId() {
 		return id;
@@ -62,8 +96,11 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
+				+ ", fullname=" + fullname + "]";
 	}
+
+
     
     
     
