@@ -1,11 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="index.css">
+<meta charset="UTF-8">
 <title>Login</title>
 </head>
 <body style="background-color: #324677;
 	         color:#f3ff99; 
- 	    	 font-weight: bold;">
+ 	    	 font-weight: bold;"
+ 	    	 vlink = white>
 <h1><center>Sing in</center></h1>
  <form action="login" method="post">
  <table
@@ -20,7 +23,7 @@
 	 	<td><center>Username</center></td>
 	 </tr>
 	 
-	 </tr>
+	 <tr>
 	 	<td><center><input type="text" name = username></center></td>
 	 </tr>
 	 

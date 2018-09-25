@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modell;
+package modell;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +14,15 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
-public class POST_DataBase {
-    public static final POST_DataBase DB_PELDANY = new POST_DataBase();
+public class PostDataBase {
+    public static final PostDataBase DB_PELDANY = new PostDataBase();
     @PersistenceContext(unitName = "UsersDB")
     private EntityManager em;
-    private POST_DataBase(){
+    private PostDataBase(){
         
     }
     
-    public static POST_DataBase getDataBase(){
+    public static PostDataBase getDataBase(){
         return DB_PELDANY;
     }
    
@@ -47,11 +47,11 @@ public class POST_DataBase {
     public Post save(Post entity) throws IllegalStateException, IllegalArgumentException, Exception {
 
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!");
         }
 
         if (entity == null) {
-            throw new IllegalArgumentException("A mentendõ entitás null!");
+            throw new IllegalArgumentException("A mentendï¿½ entitï¿½s null!");
         }
 
         try {
@@ -73,11 +73,11 @@ public class POST_DataBase {
 
     public void delete(Post entity) throws IllegalStateException, IllegalArgumentException, Exception {
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!");
         }
 
         if (entity == null || entity.getId() == 0) {
-            throw new IllegalArgumentException("A törlendõ entitás null vagy nincs ID-je!");
+            throw new IllegalArgumentException("A tï¿½rlendï¿½ entitï¿½s null vagy nincs ID-je!");
         }
 
         try {
@@ -85,7 +85,7 @@ public class POST_DataBase {
             User delEntity = em.find(User.class, entity.getId());
 
             if (delEntity.getId() == null) {
-                throw new IllegalArgumentException("A törlendõ entitás nincs az adatbázisban!");
+                throw new IllegalArgumentException("A tï¿½rlendï¿½ entitï¿½s nincs az adatbï¿½zisban!");
             }
 
             em.getTransaction().begin();

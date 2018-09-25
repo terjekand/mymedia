@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Modell.POST_DataBase;
-import Modell.USER_DataBase;
-import Modell.User;
+import modell.PostDataBase;
+import modell.UserDataBase;
+import modell.User;
 
 @WebServlet(urlPatterns = "/registration")
-public class registrationServlet extends HttpServlet{
-	private static final USER_DataBase USER_DB = USER_DataBase.getDataBase();
+public class RegistrationServlet extends HttpServlet{
+	private static final UserDataBase USER_DB = UserDataBase.getDataBase();
 	@Override
 	public void init() {
 		   

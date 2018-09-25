@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modell;
+package modell;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,15 +16,15 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
-public class USER_DataBase implements Serializable{
-    public static final USER_DataBase DB_PELDANY = new USER_DataBase();
+public class UserDataBase implements Serializable{
+    public static final UserDataBase DB_PELDANY = new UserDataBase();
     @PersistenceContext(unitName = "UsersDB")
     private EntityManager em;
-    private USER_DataBase(){
+    private UserDataBase(){
         
     }
     
-    public static USER_DataBase getDataBase(){
+    public static UserDataBase getDataBase(){
         return DB_PELDANY;
     }
    
@@ -49,11 +49,11 @@ public class USER_DataBase implements Serializable{
     public User save(User entity) throws IllegalStateException, IllegalArgumentException, Exception {
 
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!");
         }
 
         if (entity == null) {
-            throw new IllegalArgumentException("A mentendõ entitás null!");
+            throw new IllegalArgumentException("A mentendï¿½ entitï¿½s null!");
         }
 
         try {
@@ -75,18 +75,18 @@ public class USER_DataBase implements Serializable{
 
     public void delete(User entity) throws IllegalStateException, IllegalArgumentException, Exception {
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!");
         }
 
         if (entity == null || entity.getId() == 0) {
-            throw new IllegalArgumentException("A törlendõ entitás null vagy nincs ID-je!");
+            throw new IllegalArgumentException("A tï¿½rlendï¿½ entitï¿½s null vagy nincs ID-je!");
         }
 
         try {
             User delEntity = em.find(User.class, entity.getId());
 
             if (delEntity.getId() == null) {
-                throw new IllegalArgumentException("A törlendõ entitás nincs az adatbázisban");
+                throw new IllegalArgumentException("A tï¿½rlendï¿½ entitï¿½s nincs az adatbï¿½zisban");
             }
 
             em.getTransaction().begin();
@@ -100,7 +100,7 @@ public class USER_DataBase implements Serializable{
 
     public boolean validUser(User user){
         if(!connected()){
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!");
         }
         try{
              Query query = em.createNamedQuery("User.validUser", User.class);
@@ -121,7 +121,7 @@ public class USER_DataBase implements Serializable{
 
     public User getUser(String USERNAME){
         if(!connected()){
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!");
         }
         try{
              Query query = em.createNamedQuery("User.getUser", User.class);
@@ -145,7 +145,7 @@ public class USER_DataBase implements Serializable{
     
     public List<User> listAllUser(){
         if(!connected()){
-            throw new IllegalStateException("Nincs adatbázis-kapcsolat!t");
+            throw new IllegalStateException("Nincs adatbï¿½zis-kapcsolat!t");
         }
         try{
             Query query = em.createNamedQuery("User.listAllUser", User.class);

@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Modell.POST_DataBase;
-import Modell.USER_DataBase;
-import Modell.User;
+import modell.PostDataBase;
+import modell.UserDataBase;
+import modell.User;
 
 
 @WebServlet(urlPatterns = "/login")
-public class welcomeServlet extends HttpServlet {
-	private static final USER_DataBase USER_DB = USER_DataBase.getDataBase();
+public class WelcomeServlet extends HttpServlet {
+	private static final UserDataBase UserDB = UserDataBase.getDataBase();
 	@Override
 	public void init() {
 		   
 		   try {
-	            USER_DB.connectDB();
+	            UserDB.connectDB();
 	            System.out.println("Connect to database");
 		       
 
@@ -42,7 +42,7 @@ public class welcomeServlet extends HttpServlet {
 		    
 		   System.out.println(request.getParameter("username"));
 		   System.out.println(request.getParameter("password"));
-		   User user = USER_DB.getUser(request.getParameter("username"));
+		   User user = UserDB.getUser(request.getParameter("username"));
 		   if(user == null) {
 			   request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 		   }
@@ -60,7 +60,7 @@ public class welcomeServlet extends HttpServlet {
 	   
 	   @Override
 	   public void destroy() {
-           USER_DB.disconnectDB();
+           UserDB.disconnectDB();
 	   }
 
 }
